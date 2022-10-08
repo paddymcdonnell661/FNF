@@ -1,7 +1,28 @@
+namespace SpriteKind {
+    export const Icon = SpriteKind.create()
+}
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Boyfriend)
     statusbar.value += -1
     info.changeScoreBy(350)
+    UpArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f f f . . . . . . 
+        . . . . . . f 6 6 f f . . . . . 
+        . . . . . f 6 7 7 6 f f . . . . 
+        . . . . f 6 7 7 7 7 6 f f . . . 
+        . . . f 6 7 7 7 7 7 7 6 f f . . 
+        . . f 6 7 7 7 7 7 7 7 7 6 f f . 
+        . f 6 7 7 7 7 7 7 7 7 7 7 6 f . 
+        . f 6 6 6 6 6 7 7 6 6 6 6 6 f . 
+        . f f f f f 6 7 7 6 f f f f f . 
+        . . . . . f 6 7 7 6 f . . . . . 
+        . . . . . f 6 7 7 6 f . . . . . 
+        . . . . . f 6 7 7 6 f . . . . . 
+        . . . . . f 6 6 6 6 f . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ...............ffffffff.........
         ..............f9f2f9fccf........
@@ -113,6 +134,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `)
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
+    DownArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f 1 1 1 1 f . . . . . 
+        . . . . . f 1 b b 1 f . . . . . 
+        . . . . . f 1 b b 1 f . . . . . 
+        . . . . . f 1 b b 1 f . . . . . 
+        . f f f f f 1 b b 1 f f f f f . 
+        . f 1 1 1 1 1 b b 1 1 1 1 1 f . 
+        . f 1 b b b b b b b b b b 1 f . 
+        . . f 1 b b b b b b b b 1 f . . 
+        . . . f 1 b b b b b b 1 f . . . 
+        . . . . f 1 b b b b 1 f . . . . 
+        . . . . . f 1 b b 1 f . . . . . 
+        . . . . . . f 1 1 f . . . . . . 
+        . . . . . . . f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ................................
         ...................ffffffff.....
@@ -323,6 +362,24 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Boyfriend)
     statusbar.value += -1
     info.changeScoreBy(350)
+    LeftArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f f f . . . . . . 
+        . . . . . . f c c f . . . . . . 
+        . . . . . f c a c f . . . . . . 
+        . . . . f c a a c f . . . . . . 
+        . . . f c a a a c f f f f f f . 
+        . . f c a a a a c c c c c c f . 
+        . f c a a a a a a a a a a c f . 
+        . f c a a a a a a a a a a c f . 
+        . f f c a a a a c c c c c c f . 
+        . . f f c a a a c f f f f f f . 
+        . . . f f c a a c f . . . . . . 
+        . . . . f f c a c f . . . . . . 
+        . . . . . f f c c f . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ................................
         ................................
@@ -431,6 +488,24 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
+    RightArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        . . . . . . f 1 1 f . . . . . . 
+        . . . . . . f 1 b 1 f . . . . . 
+        . . . . . . f 1 b b 1 f . . . . 
+        . f f f f f f 1 b b b 1 f . . . 
+        . f 1 1 1 1 1 1 b b b b 1 f . . 
+        . f 1 b b b b b b b b b b 1 f . 
+        . f 1 b b b b b b b b b b 1 f . 
+        . f 1 1 1 1 1 1 b b b b 1 f . . 
+        . f f f f f f 1 b b b 1 f . . . 
+        . . . . . . f 1 b b 1 f . . . . 
+        . . . . . . f 1 b 1 f . . . . . 
+        . . . . . . f 1 1 f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ................................
         ...................ffffffff.....
@@ -638,6 +713,24 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
     )
 })
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
+    LeftArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f f f . . . . . . 
+        . . . . . . f 1 1 f . . . . . . 
+        . . . . . f 1 b 1 f . . . . . . 
+        . . . . f 1 b b 1 f . . . . . . 
+        . . . f 1 b b b 1 f f f f f f . 
+        . . f 1 b b b b 1 1 1 1 1 1 f . 
+        . f 1 b b b b b b b b b b 1 f . 
+        . f 1 b b b b b b b b b b 1 f . 
+        . f f 1 b b b b 1 1 1 1 1 1 f . 
+        . . f f 1 b b b 1 f f f f f f . 
+        . . . f f 1 b b 1 f . . . . . . 
+        . . . . f f 1 b 1 f . . . . . . 
+        . . . . . f f 1 1 f . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ................................
         ...................ffffffff.....
@@ -848,6 +941,24 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Boyfriend)
     statusbar.value += -1
     info.changeScoreBy(350)
+    RightArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        . . . . . . f e e f . . . . . . 
+        . . . . . . f e 2 e f . . . . . 
+        . . . . . . f e 2 2 e f . . . . 
+        . f f f f f f e 2 2 2 e f . . . 
+        . f e e e e e e 2 2 2 2 e f . . 
+        . f e 2 2 2 2 2 2 2 2 2 2 e f . 
+        . f e 2 2 2 2 2 2 2 2 2 2 e f . 
+        . f e e e e e e 2 2 2 2 e f . . 
+        . f f f f f f e 2 2 2 e f . . . 
+        . . . . . . f e 2 2 e f . . . . 
+        . . . . . . f e 2 e f . . . . . 
+        . . . . . . f e e f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ................................
         ....................ffffffff....
@@ -1500,6 +1611,24 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
     )
 })
 controller.up.onEvent(ControllerButtonEvent.Released, function () {
+    UpArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f f f . . . . . . 
+        . . . . . . f 1 1 f f . . . . . 
+        . . . . . f 1 b b 1 f f . . . . 
+        . . . . f 1 b b b b 1 f f . . . 
+        . . . f 1 b b b b b b 1 f f . . 
+        . . f 1 b b b b b b b b 1 f f . 
+        . f 1 b b b b b b b b b b 1 f . 
+        . f 1 1 1 1 1 b b 1 1 1 1 1 f . 
+        . f f f f f 1 b b 1 f f f f f . 
+        . . . . . f 1 b b 1 f . . . . . 
+        . . . . . f 1 b b 1 f . . . . . 
+        . . . . . f 1 b b 1 f . . . . . 
+        . . . . . f 1 1 1 1 f . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ................................
         ...................ffffffff.....
@@ -1710,6 +1839,24 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Boyfriend)
     statusbar.value += -1
     info.changeScoreBy(350)
+    DownArrow.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f 8 8 8 8 f . . . . . 
+        . . . . . f 8 9 9 8 f . . . . . 
+        . . . . . f 8 9 9 8 f . . . . . 
+        . . . . . f 8 9 9 8 f . . . . . 
+        . f f f f f 8 9 9 8 f f f f f . 
+        . f 8 8 8 8 8 9 9 8 8 8 8 8 f . 
+        . f 8 9 9 9 9 9 9 9 9 9 9 8 f . 
+        . . f 8 9 9 9 9 9 9 9 9 8 f . . 
+        . . . f 8 9 9 9 9 9 9 8 f . . . 
+        . . . . f 8 9 9 9 9 8 f . . . . 
+        . . . . . f 8 9 9 8 f . . . . . 
+        . . . . . . f 8 8 f . . . . . . 
+        . . . . . . . f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     Boyfriend.setImage(img`
         ................................
         ................................
@@ -1963,6 +2110,10 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ,
     )
 })
 let statusbar: StatusBarSprite = null
+let RightArrow: Sprite = null
+let UpArrow: Sprite = null
+let DownArrow: Sprite = null
+let LeftArrow: Sprite = null
 let Girlfriend: Sprite = null
 let Boyfriend: Sprite = null
 scene.setBackgroundImage(img`
@@ -2221,9 +2372,85 @@ Girlfriend = sprites.create(img`
     ................f...............
     ................................
     `, SpriteKind.Player)
+LeftArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . f f f . . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . f 1 b 1 f . . . . . . 
+    . . . . f 1 b b 1 f . . . . . . 
+    . . . f 1 b b b 1 f f f f f f . 
+    . . f 1 b b b b 1 1 1 1 1 1 f . 
+    . f 1 b b b b b b b b b b 1 f . 
+    . f 1 b b b b b b b b b b 1 f . 
+    . f f 1 b b b b 1 1 1 1 1 1 f . 
+    . . f f 1 b b b 1 f f f f f f . 
+    . . . f f 1 b b 1 f . . . . . . 
+    . . . . f f 1 b 1 f . . . . . . 
+    . . . . . f f 1 1 f . . . . . . 
+    . . . . . . f f f f . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+DownArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . f 1 1 1 1 f . . . . . 
+    . . . . . f 1 b b 1 f . . . . . 
+    . . . . . f 1 b b 1 f . . . . . 
+    . . . . . f 1 b b 1 f . . . . . 
+    . f f f f f 1 b b 1 f f f f f . 
+    . f 1 1 1 1 1 b b 1 1 1 1 1 f . 
+    . f 1 b b b b b b b b b b 1 f . 
+    . . f 1 b b b b b b b b 1 f . . 
+    . . . f 1 b b b b b b 1 f . . . 
+    . . . . f 1 b b b b 1 f . . . . 
+    . . . . . f 1 b b 1 f . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . . . f f . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+UpArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . f f f . . . . . . 
+    . . . . . . f 1 1 f f . . . . . 
+    . . . . . f 1 b b 1 f f . . . . 
+    . . . . f 1 b b b b 1 f f . . . 
+    . . . f 1 b b b b b b 1 f f . . 
+    . . f 1 b b b b b b b b 1 f f . 
+    . f 1 b b b b b b b b b b 1 f . 
+    . f 1 1 1 1 1 b b 1 1 1 1 1 f . 
+    . f f f f f 1 b b 1 f f f f f . 
+    . . . . . f 1 b b 1 f . . . . . 
+    . . . . . f 1 b b 1 f . . . . . 
+    . . . . . f 1 b b 1 f . . . . . 
+    . . . . . f 1 1 1 1 f . . . . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+RightArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . f f f . . . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . . f 1 b 1 f . . . . . 
+    . . . . . . f 1 b b 1 f . . . . 
+    . f f f f f f 1 b b b 1 f . . . 
+    . f 1 1 1 1 1 1 b b b b 1 f . . 
+    . f 1 b b b b b b b b b b 1 f . 
+    . f 1 b b b b b b b b b b 1 f . 
+    . f 1 1 1 1 1 1 b b b b 1 f . . 
+    . f f f f f f 1 b b b 1 f . . . 
+    . . . . . . f 1 b b 1 f . . . . 
+    . . . . . . f 1 b 1 f . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . . f f f . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
 Boyfriend.setPosition(130, 80)
 Girlfriend.setPosition(80, 50)
 Boombox.setPosition(80, 61)
+LeftArrow.setPosition(102, 20)
+DownArrow.setPosition(118, 20)
+UpArrow.setPosition(134, 20)
+RightArrow.setPosition(150, 20)
 animation.runImageAnimation(
 Boyfriend,
 [img`
