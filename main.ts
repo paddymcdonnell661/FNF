@@ -1,6 +1,26 @@
 namespace SpriteKind {
     export const Icon = SpriteKind.create()
 }
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LT, statusbars.ComparisonType.Percentage, 50, function (status) {
+    BfIcon.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f f f f f . . 
+        . . f . f 6 6 6 6 6 f 6 6 f . . 
+        . f 6 f f 6 6 6 6 6 f 6 6 f . . 
+        f 6 6 6 f f 6 6 6 6 f 6 6 f . . 
+        . f f 6 6 6 f 6 6 6 f 6 6 f f . 
+        f 6 6 6 f f f f f f f f f f 6 f 
+        f 6 f f f 6 6 f 6 f 6 6 f 6 f . 
+        . f . . f 6 f 6 f 6 f 6 f 6 f . 
+        . . . . f 6 f 6 6 6 f 6 6 f f . 
+        . . . f 6 6 6 6 6 6 6 f 6 6 f . 
+        . . . f 6 6 6 f f f f 6 6 f . . 
+        . . . . f 6 6 6 6 6 6 6 f f . . 
+        . . . . . f f f f f f f . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
+})
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, BfBody)
     animation.stopAnimation(animation.AnimationTypes.All, BfFistAndMic)
@@ -25,9 +45,51 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f f f f f f . . . . . 
         . . . . . . . . . . . . . . . . 
         `)
+    BfIcon.x += -1
+})
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LT, statusbars.ComparisonType.Percentage, 5, function (status) {
+    BfIcon.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f f f f f . . 
+        . . f . f 6 6 6 6 6 f 6 6 f . . 
+        . f 6 f f 6 6 6 6 6 f 6 6 f . . 
+        f 6 6 6 f f 6 6 6 6 f 6 6 f . . 
+        . f f 6 6 6 f 6 6 6 f 6 6 f f . 
+        f 6 6 6 f f f f f f f f f f 6 f 
+        f 6 f f f 6 6 f 6 f 6 6 f 6 f . 
+        . f . . f 6 f 6 f 6 f 6 f 6 f . 
+        . . . . f f 6 f 6 f 6 f 6 f f . 
+        . . . f 6 6 6 6 6 6 6 6 6 6 f . 
+        . . . f 6 6 6 6 6 6 6 1 6 f . . 
+        . . . . f 6 1 1 1 1 1 6 f f . . 
+        . . . . . f f f f f f f . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     statusbar.value += 1
+    BfIcon.x += 1
+})
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.GT, statusbars.ComparisonType.Percentage, 95, function (status) {
+    BfIcon.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f f f f f . . 
+        . . f . f 6 6 6 6 6 f 6 6 f . . 
+        . f 6 f f 6 6 6 6 6 f 6 6 f . . 
+        f 6 6 6 f f 6 6 6 6 f 6 6 f . . 
+        . f f 6 6 6 f 6 6 6 f 6 6 f f . 
+        f 6 6 6 f f f f f f f f f f 6 f 
+        f 6 f f f f 6 f 6 f 6 f f 6 f . 
+        . f . . f 6 f 6 6 6 f 6 f 6 f . 
+        . . . . f f 6 f 6 f 6 f 6 f f . 
+        . . . f 6 6 6 6 6 6 6 6 6 6 f . 
+        . . . f 6 6 6 6 6 6 6 6 6 f . . 
+        . . . . f 6 6 1 1 1 1 6 6 f . . 
+        . . . . . f 1 1 1 1 1 1 f . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, BfBody)
@@ -246,6 +308,78 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         f1ffffffffffff31ffffffff1f
         f1111333333333f3311111113f
         .fffffffffffff.ffffffffff.
+        `],
+    150,
+    true
+    )
+    animation.runImageAnimation(
+    BfFistAndMic,
+    [img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f . . 
+        . . . f f f . f . f f c f f . 
+        . f f 4 4 4 f b f f c f c f . 
+        . f 4 d d 4 f b f c f b f f . 
+        . f d d d d f c f f b f b f . 
+        . f d f f d f c f c f b f f . 
+        . . f d d f . f . f b f b f . 
+        . . f f f f . . . . f f f . . 
+        . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f . . 
+        . . . f f f . f . f f c f f . 
+        . f f 4 4 4 f b f f c f c f . 
+        . f 4 d d 4 f b f c f b f f . 
+        . f d d d d f c f f b f b f . 
+        . f d f f d f c f c f b f f . 
+        . . f d d f . f . f b f b f . 
+        . . f f f f . . . . f f f . . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f . . 
+        . . . f f f . f . f f c f f . 
+        . f f 4 4 4 f b f f c f c f . 
+        . f 4 d d 4 f b f c f b f f . 
+        . f d d d d f c f f b f b f . 
+        . f d f f d f c f c f b f f . 
+        . . f d d f . f . f b f b f . 
+        . . f f f f . . . . f f f . . 
+        . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f . . 
+        . . . f f f . f . f f c f f . 
+        . f f 4 4 4 f b f f c f c f . 
+        . f 4 d d 4 f b f c f b f f . 
+        . f d d d d f c f f b f b f . 
+        . f d f f d f c f c f b f f . 
+        . . f d d f . f . f b f b f . 
+        . . f f f f . . . . f f f . . 
+        . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f . . 
+        . . . f f f . f . f f c f f . 
+        . f f 4 4 4 f b f f c f c f . 
+        . f 4 d d 4 f b f c f b f f . 
+        . f d d d d f c f f b f b f . 
+        . f d f f d f c f c f b f f . 
+        . . f d d f . f . f b f b f . 
+        . . f f f f . . . . f f f . . 
+        . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f . . 
+        . . . f f f . f . f f c f f . 
+        . f f 4 4 4 f b f f c f c f . 
+        . f 4 d d 4 f b f c f b f f . 
+        . f d d d d f c f f b f b f . 
+        . f d f f d f c f c f b f f . 
+        . . f d d f . f . f b f b f . 
+        . . f f f f . . . . f f f . . 
+        . . . . . . . . . . . . . . . 
         `],
     150,
     true
@@ -701,6 +835,27 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f c a c f . . . . . . 
         . . . . . . f c c f . . . . . . 
         . . . . . . . f f f . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
+    BfIcon.x += -1
+})
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.GT, statusbars.ComparisonType.Percentage, 50, function (status) {
+    BfIcon.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f f f f f . . 
+        . . f . f 6 6 6 6 6 f 6 6 f . . 
+        . f 6 f f 6 6 6 6 6 f 6 6 f . . 
+        f 6 6 6 f f 6 6 6 6 f 6 6 f . . 
+        . f f 6 6 6 f 6 6 6 f 6 6 f f . 
+        f 6 6 6 f f f f f f f f f f 6 f 
+        f 6 f f f 6 6 f 6 f 6 6 f 6 f . 
+        . f . . f 6 f 6 f 6 f 6 f 6 f . 
+        . . . . f 6 f 6 6 6 f 6 6 f f . 
+        . . . f 6 6 6 6 6 6 6 6 6 6 f . 
+        . . . f 6 6 6 6 6 6 6 6 6 f . . 
+        . . . . f f f f f f f f f f . . 
+        . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `)
 })
@@ -1380,6 +1535,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . f f f . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `)
+    BfIcon.x += -1
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     BfFistAndMic.setImage(img`
@@ -2387,10 +2543,176 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . f f . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `)
+    BfIcon.x += -1
 })
 statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ, statusbars.ComparisonType.Percentage, 100, function (status) {
     animation.stopAnimation(animation.AnimationTypes.All, Girlfriend)
+    animation.stopAnimation(animation.AnimationTypes.All, BfBody)
+    animation.stopAnimation(animation.AnimationTypes.All, BfFistAndMic)
+    animation.stopAnimation(animation.AnimationTypes.All, BfHead)
+    Boombox.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
     Girlfriend.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    BfHead.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    BfFistAndMic.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    BfBody.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    BfIcon.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    LeftArrow.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    DownArrow.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    UpArrow.setImage(img`
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f f 
+        `)
+    RightArrow.setImage(img`
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
@@ -2530,13 +2852,128 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ,
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         `)
+    statusbar.setColor(15, 15)
+    statusbar.setBarBorder(1, 15)
+    DeathShadow = sprites.create(img`
+        ................................
+        ...................88888888.....
+        ..................8888888888....
+        .................888888888888...
+        ................8888888888888...
+        ...............88888888888888...
+        ................88888888888888..
+        ...............8888888888888888.
+        ..............8888888888888888..
+        ...............888888888888888..
+        ................88888888888888..
+        ...............888888888888888..
+        ................88888888888.....
+        ..............88888888888888....
+        .888....8888.8888888888888888...
+        88888.8.8888.8888888888888888...
+        8888888888888888888888888888....
+        88888888888888888888888888888...
+        88888888888888888888888888888...
+        8888888888888888888888888888....
+        88888.8.888.88888888888888888...
+        .888........8888888888888888....
+        ...........888888888888888888...
+        ..........8888888888888888888...
+        ..........888888888888888888....
+        .........88888888888888888888...
+        ........8888888888888888888888..
+        .......888888888888888888888888.
+        .......888888888888888888888888.
+        ......88888888888888888888888888
+        ......88888888888888888888888888
+        .......8888888888888.8888888888.
+        `, SpriteKind.Player)
+    DeathShadow.setPosition(130, 80)
+    animation.runImageAnimation(
+    DeathShadow,
+    [img`
+        fffffffff..........88888888.....
+        f444f444f.........8888888888....
+        f4f4f4fff........888888888888...
+        f44ff444f.......88888888888888..
+        f4f4f4fff......888888888888888..
+        f4f4f444f.....88888ffffffff888..
+        ffffffffffff...888f11f1111ff888.
+        f444f444f4f4f.8888f111f11f11f888
+        ff4ff4f4f4f4f88888fff11fff11ff8.
+        .f4ff44fff4f..8888fff111ffff1f8.
+        .f4ff4f4ff4f...8ff11111f111f1f8.
+        .f4ff4f4ff4f..8f11fffffff11fff8.
+        .fffffffffff..88ff1f1f1f1ff8888.
+        ........8888.8ff11fffffff11f8...
+        .fff...8ffff8f1f1f11111111f1f8..
+        fbfbf.f8f11f8f11f1ff11ff1f11f8..
+        ffbfcfcf1ff1ffff11111111ffff8...
+        fbfbffcf1111ff1f11ff11fff111f8..
+        ffbfcfbff111f11ff161116ff11ff8..
+        fcfcffbf1f1fffff1696f6961fff8...
+        ffcff.f8fff8f11f116111611111f8..
+        .fff....8888f1ff1f1111f1111f8...
+        ..........8fff11f1111f1f11f1f8..
+        .........8ff11f1ff11ff11ff11f8..
+        .........8f1f11f11fff1f11f1f8...
+        ........8f1f1f1111f1111ff1f1f8..
+        .......8f1f1f1f1f11f111f1f111f8.
+        ......8f1f1f111f1ff1f111f111f1f8
+        ......8ffff1f1f111f1fffffffffff8
+        .....8f11f111f111f111f11f11f111f
+        .....8f11ff111f1f1f1f111f11f111f
+        ......8fffffffffffff8ffffffffff8
+        .......8888888888888.8888888888.
+        `,img`
+        fffffffff..........88888888.....
+        f555f555f.........8888888888....
+        f5f5f5fff........888888888888...
+        f55ff555f.......88888888888888..
+        f5f5f5fff......888888888888888..
+        f5f5f555f.....88888ffffffff888..
+        ffffffffffff...888f11f1111ff888.
+        f555f555f5f5f.8888f111f11f11f888
+        ff5ff5f5f5f5f88888fff11fff11ff8.
+        .f5ff55fff5f..8888fff111ffff1f8.
+        .f5ff5f5ff5f...8ff11111f111f1f8.
+        .f5ff5f5ff5f..8f11fffffff11fff8.
+        .fffffffffff..88ff1f1f1f1ff8888.
+        ........8888.8ff11fffffff11f8...
+        .fff...8ffff8f1f1f11111111f1f8..
+        fbfbf.f8f11f8f11f1ff11ff1f11f8..
+        ffbfcfcf1ff1ffff11111111ffff8...
+        fbfbffcf1111ff1f116f116ff111f8..
+        ffbfcfbff111f11ff6961696f11ff8..
+        fcfcffbf1f1fffff699969996fff8...
+        ffcff.f8fff8f11f169616961111f8..
+        .fff....8888f1ff1f611161111f8...
+        ..........8fff11f1111f1f11f1f8..
+        .........8ff11f1ff11ff11ff11f8..
+        .........8f1f11f11fff1f11f1f8...
+        ........8f1f1f1111f1111ff1f1f8..
+        .......8f1f1f1f1f11f111f1f111f8.
+        ......8f1f1f111f1ff1f111f111f1f8
+        ......8ffff1f1f111f1fffffffffff8
+        .....8f11f111f111f111f11f11f111f
+        .....8f11ff111f1f1f1f111f11f111f
+        ......8fffffffffffff8ffffffffff8
+        .......8888888888888.8888888888.
+        `],
+    100,
+    true
+    )
+    game.over(false, effects.dissolve)
 })
+let DeathShadow: Sprite = null
 let statusbar: StatusBarSprite = null
+let BfIcon: Sprite = null
 let RightArrow: Sprite = null
 let UpArrow: Sprite = null
 let DownArrow: Sprite = null
 let LeftArrow: Sprite = null
 let Girlfriend: Sprite = null
+let Boombox: Sprite = null
 let BfHead: Sprite = null
 let BfFistAndMic: Sprite = null
 let BfBody: Sprite = null
@@ -2711,7 +3148,7 @@ BfHead = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-let Boombox = sprites.create(img`
+Boombox = sprites.create(img`
     ................................................................
     ................................................................
     ................................................................
@@ -3617,6 +4054,25 @@ DaddyDearest,
 100,
 true
 )
+BfIcon = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . f f f f f f f f f f . . 
+    . . f . f 6 6 6 6 6 f 6 6 f . . 
+    . f 6 f f 6 6 6 6 6 f 6 6 f . . 
+    f 6 6 6 f f 6 6 6 6 f 6 6 f . . 
+    . f f 6 6 6 f 6 6 6 f 6 6 f f . 
+    f 6 6 6 f f f f f f f f f f 6 f 
+    f 6 f f f 6 6 f 6 f 6 6 f 6 f . 
+    . f . . f 6 f 6 f 6 f 6 f 6 f . 
+    . . . . f 6 f 6 6 6 f 6 6 f f . 
+    . . . f 6 6 6 6 6 6 6 6 6 6 f . 
+    . . . f 6 6 6 6 6 6 6 6 6 f . . 
+    . . . . f f f f f f f f f f . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Icon)
+BfIcon.setPosition(80, 113)
 statusbar = statusbars.create(100, 4, StatusBarKind.Health)
 statusbar.setColor(2, 7)
 statusbar.setBarBorder(1, 15)
