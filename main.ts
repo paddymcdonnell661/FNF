@@ -838,6 +838,211 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         `)
     BfIcon.x += -1
+    animation.runImageAnimation(
+    BfBody,
+    [img`
+        ..........................
+        ......f...................
+        ..ffff3ff........f........
+        .f44f33ffffffffff1ff......
+        f4ddf3fff11111133111f.....
+        ffff.f..f1122213ffff......
+        f44f....f1211221f444f.....
+        f44f....f1212121ffdddf....
+        ffff....f1221121f6fff.....
+        ........f1f22211f6666f....
+        ......ffff8fffff6666f.....
+        ......f68888888866668f....
+        .....fff8866666f8668f.....
+        ....f22cf8fff6fcf88f2f....
+        ...f13cccf22ff221ff1ccf...
+        ..f13cccccccccfcc133122f..
+        .f13ccccccccccffccccccccf.
+        f1ffffffffffff31ffffffff1f
+        f1111333333333f3311111113f
+        .fffffffffffff.ffffffffff.
+        `],
+    150,
+    true
+    )
+    animation.runImageAnimation(
+    BfHead,
+    [img`
+        . . . . . . . f f f f f f f f . . . . 
+        . . . . . . f 2 2 2 2 2 f c c f . . . 
+        . . . . . f 9 f 2 f 2 2 f c c c f . . 
+        . . . . f 9 9 9 f 9 f 2 f c c c f . . 
+        . . . f 9 6 6 f 9 6 6 f 6 f f c f . . 
+        . . . . f 6 6 6 f 6 6 6 f 6 6 f f f . 
+        . . . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f 
+        . . f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . 
+        . . . f 6 6 f d f d 4 f d 4 4 f d f . 
+        . . . . f f d d d d d d f 4 4 f 4 f . 
+        . . . f d d d f f f f f 2 f 4 f f f . 
+        . . . . f f d d d d f 2 2 f f . . . . 
+        . . . . . . f f f f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . f f f f f f f f . . . . . . 
+        . . . . f 2 2 2 2 2 f c c f . . . . . 
+        . . . f 9 f 2 f 2 2 f c c c f . . . . 
+        . . f 9 9 9 f 9 f 2 f c c c f . . . . 
+        . f 9 6 6 f 9 6 6 f 6 f f c f . . . . 
+        . . f 6 6 6 f 6 6 6 f 6 6 f f f . . . 
+        . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f . . 
+        f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . . . 
+        . f 6 6 f d f d 4 f d 4 4 f d f . . . 
+        . . f f d d d d d d f 4 4 f 4 f . . . 
+        . f d d d f f f f f 2 f 4 f f f . . . 
+        . . f f d d d d f 2 2 f f . . . . . . 
+        . . . . f f f f f f f . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . f f f f f f f f . . . . . 
+        . . . . . f 2 2 2 2 2 f c c f . . . . 
+        . . . . f 9 f 2 f 2 2 f c c c f . . . 
+        . . . f 9 9 9 f 9 f 2 f c c c f . . . 
+        . . f 9 6 6 f 9 6 6 f 6 f f c f . . . 
+        . . . f 6 6 6 f 6 6 6 f 6 6 f f f . . 
+        . . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f . 
+        . f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . . 
+        . . f 6 6 f d f d 4 f d 4 4 f d f . . 
+        . . . f f d d d d d d f 4 4 f 4 f . . 
+        . . f d d d f f f f f 2 f 4 f f f . . 
+        . . . f f d d d d f 2 2 f f . . . . . 
+        . . . . . f f f f f f f . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . f f f f f f f f . . . . 
+        . . . . . . f 2 2 2 2 2 f c c f . . . 
+        . . . . . f 9 f 2 f 2 2 f c c c f . . 
+        . . . . f 9 9 9 f 9 f 2 f c c c f . . 
+        . . . f 9 6 6 f 9 6 6 f 6 f f c f . . 
+        . . . . f 6 6 6 f 6 6 6 f 6 6 f f f . 
+        . . . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f 
+        . . f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . 
+        . . . f 6 6 f d f d 4 f d 4 4 f d f . 
+        . . . . f f d d d d d d f 4 4 f 4 f . 
+        . . . f d d d f f f f f 2 f 4 f f f . 
+        . . . . f f d d d d f 2 2 f f . . . . 
+        . . . . . . f f f f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . f f f f f f f f . . . . 
+        . . . . . . f 2 2 2 2 2 f c c f . . . 
+        . . . . . f 9 f 2 f 2 2 f c c c f . . 
+        . . . . f 9 9 9 f 9 f 2 f c c c f . . 
+        . . . f 9 6 6 f 9 6 6 f 6 f f c f . . 
+        . . . . f 6 6 6 f 6 6 6 f 6 6 f f f . 
+        . . . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f 
+        . . f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . 
+        . . . f 6 6 f d f d 4 f d 4 4 f d f . 
+        . . . . f f d d d d d d f 4 4 f 4 f . 
+        . . . f d d d f f f f f 2 f 4 f f f . 
+        . . . . f f d d d d f 2 2 f f . . . . 
+        . . . . . . f f f f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . f f f f f f f f . . . . 
+        . . . . . . f 2 2 2 2 2 f c c f . . . 
+        . . . . . f 9 f 2 f 2 2 f c c c f . . 
+        . . . . f 9 9 9 f 9 f 2 f c c c f . . 
+        . . . f 9 6 6 f 9 6 6 f 6 f f c f . . 
+        . . . . f 6 6 6 f 6 6 6 f 6 6 f f f . 
+        . . . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f 
+        . . f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . 
+        . . . f 6 6 f d f d 4 f d 4 4 f d f . 
+        . . . . f f d d d d d d f 4 4 f 4 f . 
+        . . . f d d d f f f f f 2 f 4 f f f . 
+        . . . . f f d d d d f 2 2 f f . . . . 
+        . . . . . . f f f f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        `],
+    150,
+    true
+    )
+    BfHead.x += -2
+    BfHead.y += 2
+    animation.runImageAnimation(
+    BfFistAndMic,
+    [img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . f f f . 
+        . . . . f f f . f . f f c f f 
+        . . f f 4 4 4 f b f f c f c f 
+        . . f 4 d d 4 f b f c f b f f 
+        . . f d d d d f c f f b f b f 
+        . . f d f f d f c f c f b f f 
+        . . . f d d f . f . f b f b f 
+        . . . f f f f . . . . f f f . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . f f f . . . 
+        . . f f f . f . f f c f f . . 
+        f f 4 4 4 f b f f c f c f . . 
+        f 4 d d 4 f b f c f b f f . . 
+        f d d d d f c f f b f b f . . 
+        f d f f d f c f c f b f f . . 
+        . f d d f . f . f b f b f . . 
+        . f f f f . . . . f f f . . . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f . . 
+        . . . f f f . f . f f c f f . 
+        . f f 4 4 4 f b f f c f c f . 
+        . f 4 d d 4 f b f c f b f f . 
+        . f d d d d f c f f b f b f . 
+        . f d f f d f c f c f b f f . 
+        . . f d d f . f . f b f b f . 
+        . . f f f f . . . . f f f . . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . f f f . 
+        . . . . f f f . f . f f c f f 
+        . . f f 4 4 4 f b f f c f c f 
+        . . f 4 d d 4 f b f c f b f f 
+        . . f d d d d f c f f b f b f 
+        . . f d f f d f c f c f b f f 
+        . . . f d d f . f . f b f b f 
+        . . . f f f f . . . . f f f . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . f f f . 
+        . . . . f f f . f . f f c f f 
+        . . f f 4 4 4 f b f f c f c f 
+        . . f 4 d d 4 f b f c f b f f 
+        . . f d d d d f c f f b f b f 
+        . . f d f f d f c f c f b f f 
+        . . . f d d f . f . f b f b f 
+        . . . f f f f . . . . f f f . 
+        `,img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . f f f . 
+        . . . . f f f . f . f f c f f 
+        . . f f 4 4 4 f b f f c f c f 
+        . . f 4 d d 4 f b f c f b f f 
+        . . f d d d d f c f f b f b f 
+        . . f d f f d f c f c f b f f 
+        . . . f d d f . f . f b f b f 
+        . . . f f f f . . . . f f f . 
+        `],
+    150,
+    true
+    )
+    BfFistAndMic.x += 4
+    BfFistAndMic.y += -1
 })
 statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.GT, statusbars.ComparisonType.Percentage, 50, function (status) {
     BfIcon.setImage(img`
@@ -1204,6 +1409,10 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
         . . . . . . f f f f . . . . . . 
         . . . . . . . . . . . . . . . . 
         `)
+    BfFistAndMic.x += -4
+    BfFistAndMic.y += 1
+    BfHead.x += 2
+    BfHead.y += -2
     animation.runImageAnimation(
     BfBody,
     [img`
