@@ -1,5 +1,9 @@
 namespace SpriteKind {
     export const Icon = SpriteKind.create()
+    export const Left = SpriteKind.create()
+    export const Down = SpriteKind.create()
+    export const Up = SpriteKind.create()
+    export const Right = SpriteKind.create()
 }
 statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LT, statusbars.ComparisonType.Percentage, 50, function (status) {
     BfIcon.setImage(img`
@@ -27,7 +31,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, BfHead)
     statusbar.value += -1
     info.changeScoreBy(350)
-    UpArrow.setImage(img`
+    UpArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . f f . . . . . . . 
         . . . . . . f 6 6 f . . . . . . 
@@ -488,7 +492,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
-    DownArrow.setImage(img`
+    DownArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . f f f f f f . . . . . 
         . . . . . f 1 1 1 1 f . . . . . 
@@ -819,7 +823,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, BfHead)
     statusbar.value += -1
     info.changeScoreBy(350)
-    LeftArrow.setImage(img`
+    LeftArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . f f f . . . . . . 
         . . . . . . f c c f . . . . . . 
@@ -1065,7 +1069,7 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.GT,
         `)
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
-    RightArrow.setImage(img`
+    RightArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . f f f . . . . . . . 
         . . . . . . f 1 1 f . . . . . . 
@@ -1391,7 +1395,7 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
     )
 })
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
-    LeftArrow.setImage(img`
+    LeftArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . f f f . . . . . . 
         . . . . . . f 1 1 f . . . . . . 
@@ -1726,7 +1730,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, BfHead)
     statusbar.value += -1
     info.changeScoreBy(350)
-    RightArrow.setImage(img`
+    RightArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . f f f . . . . . . . 
         . . . . . . f e e f . . . . . . 
@@ -2403,7 +2407,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
     )
 })
 controller.up.onEvent(ControllerButtonEvent.Released, function () {
-    UpArrow.setImage(img`
+    UpArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . f f f . . . . . . 
         . . . . . . f 1 1 f f . . . . . 
@@ -2734,7 +2738,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, BfHead)
     statusbar.value += -1
     info.changeScoreBy(350)
-    DownArrow.setImage(img`
+    DownArrowKey.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . f f f f f f . . . . . 
         . . . . . f 8 8 8 8 f . . . . . 
@@ -2753,6 +2757,44 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         `)
     BfIcon.x += -1
+    animation.runImageAnimation(
+    BfBody,
+    [img`
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . f f f f f f f f . . . . 
+        . . . . . . f 2 2 2 2 2 f c c f . . . 
+        . . . . . f 9 f 2 f 2 2 f c c c f . . 
+        . . . . f 9 9 9 f 9 f 2 f c c c f . . 
+        . . . f 9 6 6 f 9 6 6 f 6 f f c f . . 
+        . . . . f 6 6 6 f 6 6 6 f 6 6 f f f . 
+        . . . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f 
+        . . f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . 
+        . . . f 6 6 f d f d 4 f d 4 4 f d f . 
+        . . . . f f d d d d d d d f 4 f 4 f . 
+        . . . f d d d f f f f f f 1 4 f f f . 
+        . . . . f f d d f 1 1 1 1 f f . . . . 
+        . . . . . . f f f f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . . . 
+        . . . . . . . f f f f f f f f . . . . 
+        . . . . . . f 2 2 2 2 2 f c c f . . . 
+        . . . . . f 9 f 2 f 2 2 f c c c f . . 
+        . . . . f 9 9 9 f 9 f 2 f c c c f . . 
+        . . . f 9 6 6 f 9 6 6 f 6 f f c f . . 
+        . . . . f 6 6 6 f 6 6 6 f 6 6 f f f . 
+        . . . f 9 9 6 6 6 f 6 f 9 f 6 f 8 8 f 
+        . . f 9 9 6 f 4 f 4 f f 4 4 f 6 f f . 
+        . . . f 6 6 f d f d 4 f d 4 4 f d f . 
+        . . . . f f d d d d d d d f 4 f 4 f . 
+        . . . f d d d f f f f f f 1 4 f f f . 
+        . . . . f f d d f 1 1 1 1 f f . . . . 
+        . . . . . . f f f f f f f . . . . . . 
+        `],
+    150,
+    true
+    )
 })
 statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ, statusbars.ComparisonType.Percentage, 100, function (status) {
     animation.stopAnimation(animation.AnimationTypes.All, Girlfriend)
@@ -2867,7 +2909,7 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ,
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         `)
-    LeftArrow.setImage(img`
+    LeftArrowKey.setImage(img`
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
@@ -2885,7 +2927,7 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ,
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         `)
-    DownArrow.setImage(img`
+    DownArrowKey.setImage(img`
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
@@ -2903,7 +2945,7 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ,
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         `)
-    UpArrow.setImage(img`
+    UpArrowKey.setImage(img`
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
@@ -2921,7 +2963,7 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ,
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         `)
-    RightArrow.setImage(img`
+    RightArrowKey.setImage(img`
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
@@ -3177,10 +3219,10 @@ statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.EQ,
 let DeathShadow: Sprite = null
 let statusbar: StatusBarSprite = null
 let BfIcon: Sprite = null
-let RightArrow: Sprite = null
-let UpArrow: Sprite = null
-let DownArrow: Sprite = null
-let LeftArrow: Sprite = null
+let RightArrowKey: Sprite = null
+let UpArrowKey: Sprite = null
+let DownArrowKey: Sprite = null
+let LeftArrowKey: Sprite = null
 let Girlfriend: Sprite = null
 let Boombox: Sprite = null
 let BfHead: Sprite = null
@@ -3549,7 +3591,8 @@ let DaddyDearest = sprites.create(img`
     .....fffffffffff..f...ffffffffffffff
     .....ffffff.........................
     `, SpriteKind.Enemy)
-LeftArrow = sprites.create(img`
+tiles.setCurrentTilemap(tilemap`level1`)
+LeftArrowKey = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . f f f . . . . . . 
     . . . . . . f 1 1 f . . . . . . 
@@ -3566,8 +3609,9 @@ LeftArrow = sprites.create(img`
     . . . . . . f 1 1 f . . . . . . 
     . . . . . . . f f f . . . . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
-DownArrow = sprites.create(img`
+    `, SpriteKind.Left)
+LeftArrowKey.setPosition(102, 20)
+DownArrowKey = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . f f f f f f . . . . . 
     . . . . . f 1 1 1 1 f . . . . . 
@@ -3584,8 +3628,9 @@ DownArrow = sprites.create(img`
     . . . . . . f 1 1 f . . . . . . 
     . . . . . . . f f . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
-UpArrow = sprites.create(img`
+    `, SpriteKind.Down)
+DownArrowKey.setPosition(118, 20)
+UpArrowKey = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . f f . . . . . . . 
     . . . . . . f 1 1 f . . . . . . 
@@ -3602,8 +3647,9 @@ UpArrow = sprites.create(img`
     . . . . . f 1 1 1 1 f . . . . . 
     . . . . . f f f f f f . . . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
-RightArrow = sprites.create(img`
+    `, SpriteKind.Up)
+UpArrowKey.setPosition(134, 20)
+RightArrowKey = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . f f f . . . . . . . 
     . . . . . . f 1 1 f . . . . . . 
@@ -3620,17 +3666,14 @@ RightArrow = sprites.create(img`
     . . . . . . f 1 1 f . . . . . . 
     . . . . . . f f f . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
+    `, SpriteKind.Right)
+RightArrowKey.setPosition(150, 20)
 BfBody.setPosition(133, 85)
 BfFistAndMic.setPosition(121, 81)
 BfHead.setPosition(134, 72)
 Girlfriend.setPosition(80, 50)
 DaddyDearest.setPosition(30, 61)
 Boombox.setPosition(80, 61)
-LeftArrow.setPosition(102, 20)
-DownArrow.setPosition(118, 20)
-UpArrow.setPosition(134, 20)
-RightArrow.setPosition(150, 20)
 animation.runImageAnimation(
 BfBody,
 [img`
